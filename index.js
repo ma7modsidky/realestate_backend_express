@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import cookieParser from "cookie-parser";
 import cors from "cors"
 import { userRoute } from "./routes/userRoute.js";
+import { propertyRouter } from "./routes/propertyRoute.js";
 dotenv.config()
 
 
@@ -14,6 +15,8 @@ app.use(cookieParser())
 app.use(cors())
 
 app.use('/api/user', userRoute)
+app.use('/api/property', propertyRouter)
+
 
 app.listen(PORT, ()=>{
     console.log(`server is running on port ${PORT}`)
